@@ -52,20 +52,20 @@ def getTourismStatsService(nat_cd, ed_cd, nStartYear, nEndYear):
     result = []
     natName = ''
     dataEnd = f'{nEndYear}{12:0>2}'
-    isDataEnd = False  #데이터 끝 확인용 플래그
+    isDataEnd = False  # 데이터 끝 확인용 플래그
     
     for year in range(nStartYear, nEndYear+1):
         for month in range(1, 13):
             if isDataEnd == True : break
 
-            yyyymm = f'{str(year)}{str(month):0>2}'
+            yyyymm = f'{year}{month:0>2}'
             jsonData = getTourismStatsItem(yyyymm, nat_cd, ed_cd)
 
             if jsonData['response']['header']['resultMsg'] == 'OK':
-                #데이터가 없는 경우라면 서비스 종료
+                # 데이터가 없는 경우라면 서비스 종료
                 if jsonData['response']['body']['items'] == '':
                     isDataEnd = True
-                    dataEnd = f'{str(year)}{str(month-1):0>2}'
+                    dataEnd = f'{year}{month-1:0>2}'
                     print('제공되는 데이터는 {year}년 {month-1}월까지입니다.')
                     break
 
@@ -103,7 +103,7 @@ def main():
         print('데이터 전달 실패. 공공데이터포털 서비스 확인 요망.')
     else:
         pass
-        #파일저장 1 : json 파일
+        # 파일저장 1 : json 파일
 
 
 #

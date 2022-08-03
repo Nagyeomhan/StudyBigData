@@ -102,8 +102,13 @@ def main():
     if natName == '':
         print('데이터 전달 실패. 공공데이터포털 서비스 확인 요망.')
     else:
-        pass
-        # 파일저장 1 : json 파일
+        # 파일저장 csv
+        columns = ['입국국가', '국가코드', '입국년월', '입국자수']
+        # jsonresult 안쓰고 result를 쓰는 이유 : 딕셔너리가 아닌 리스트형태로 넣으려고
+        result_df = pd.DataFrame(result, columns=columns)
+        result_df.to_csv(f'./{natName}_{ed}_{nStartYear}_{dataEnd}.csv', index=False, encoding='utf-8')
+
+        print('csv파일 저장 완료!')
 
 
 #

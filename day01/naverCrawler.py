@@ -9,6 +9,7 @@ client_id = 'jpj18gb48p4fCPR8W1jt'
 client_secret = 'yD5omERM_d'
 
 
+
 # url 접속 요청 후 응답 리턴 함수
 def getRequestUrl(url):
     req = urllib.request.Request(url)
@@ -27,6 +28,7 @@ def getRequestUrl(url):
         return None
 
 
+
 # 핵심 함수, 네이버 API 검색
 def getNaverSearch(node, srcText, start, display):
     base = 'https://openapi.naver.com/v1/search'
@@ -43,6 +45,7 @@ def getNaverSearch(node, srcText, start, display):
         return json.loads(resDecode)
 
 
+
 def getPostData(post, jsonResult, cnt):
     title = post['title']
     description = post['description']
@@ -55,6 +58,7 @@ def getPostData(post, jsonResult, cnt):
 
     jsonResult.append({'cnt':cnt, 'title':title, 'description':description,
                        'originallink':originallink, 'link':link, 'pubDate':pubDate})
+
 
 
 # 실행 최초 함수

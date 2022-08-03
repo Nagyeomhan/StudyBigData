@@ -66,7 +66,7 @@ def getTourismStatsService(nat_cd, ed_cd, nStartYear, nEndYear):
                 if jsonData['response']['body']['items'] == '':
                     isDataEnd = True
                     dataEnd = f'{year}{month-1:0>2}'
-                    print('제공되는 데이터는 {year}년 {month-1}월까지입니다.')
+                    print(f'제공되는 데이터는 {year}년 {month-1}월까지입니다.')
                     break
 
                 print(json.dumps(jsonData, indent=4, sort_keys=True, ensure_ascii=False))

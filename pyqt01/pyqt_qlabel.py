@@ -1,6 +1,6 @@
 import sys
-from PyQt5.QtWidgets import QApplication, QWidget, QLabel, QHBoxLayout, QVBoxLayout
-from PyQt5.QtGui import QIcon
+from PyQt5.QtWidgets import *
+from PyQt5.QtGui import *
 from PyQt5.QtCore import Qt
 
 class qTemplate(QWidget):
@@ -17,23 +17,19 @@ class qTemplate(QWidget):
 
     def addControls(self) -> None:
         self.setWindowIcon(QIcon('./pyqt01/image/lion.png'))   # 윈도우 아이콘 지정
-        label1 = QLabel('Label1', self)
-        label2 = QLabel('Label2', self)
+        label1 = QLabel('', self)
+        label2 = QLabel('', self)
         label1.setStyleSheet(
-            (
                 'border-width : 3px;'
                 'border-style : solid;'
                 'border-color : blue;'
                 'image : url(./pyqt01/image/image1.png)'
-            )
         )
         label2.setStyleSheet(
-            (
                 'border-width : 3px;'
                 'border-style : dot-dot-dash;'
                 'border-color : red;'
                 'image : url(./pyqt01/image/image2.png)'
-            )
         )
 
         box = QHBoxLayout()   # QH: 가로로 / QV: 세로로
@@ -45,4 +41,5 @@ class qTemplate(QWidget):
 if __name__ == '__main__':
     app = QApplication(sys.argv)
     ins = qTemplate()
+
     app.exec_()

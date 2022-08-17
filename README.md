@@ -36,6 +36,11 @@
     - 인프런 강좌내용 따라하기(스타벅스/이디야 매장 비교)
 
 ## PyQt 1
-    - PyQt5 학습
-        - PyQt5, Designer 설치
-        - PyQt5 기본 폼 만들기
+- PyQt5 학습
+    - PyQt5, Designer 설치
+    - PyQt5 기본 폼 만들기
+
+## PyQt 2
+- PyQt5 학습
+    - QtDesigner로 UI생성
+    - 네이버 API로 네이버뉴스, 영화 검색앱 만들기
